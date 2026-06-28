@@ -1,49 +1,25 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<body>
-    <!-- ===== NAVBAR GLOBAL ===== -->
-<nav style="background: #0f1b33; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; border-bottom: 3px solid #c9a84c; font-family: 'Inter', sans-serif; position: sticky; top: 0; z-index: 1000;">
-    
-    <!-- Logo / Brand -->
-    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" style="display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; font-size: 1.1rem; text-decoration: none;">
-        <span style="background: linear-gradient(135deg, #c9a84c, #e8d48b); padding: 4px 10px; border-radius: 8px; color: #0f1b33; font-weight: 800;">Ψ</span>
-        Psychosophia <span style="color: rgba(255,255,255,0.3); font-weight: 300;">·</span> Portal
-    </a>
-
-    <!-- Menu Navigasi -->
-    <div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;">
-        <a href="https://pi-iainbabel.github.io/psychosophia-hub/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-home"></i> Beranda</a>
-        
-        <a href="https://pi-iainbabel.github.io/profil-dan-rekam-jejak-akademis-lulusan/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-user-graduate"></i> Lulusan</a>
-        
-        <a href="https://pi-iainbabel.github.io/sdm/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-users"></i> SDM</a>
-        
-        <a href="https://pi-iainbabel.github.io/mahasiswa/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-user-graduate"></i> Mahasiswa</a>
-        
-        <a href="https://pi-iainbabel.github.io/spmi/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-clipboard-check"></i> SPMI</a>
-        
-        <a href="https://pi-iainbabel.github.io/kurikulum/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-book-open"></i> Kurikulum</a>
-        
-        <a href="https://pi-iainbabel.github.io/psychosophia-portfolio/" style="color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px; transition: all 0.3s;"><i class="fas fa-microchip"></i> Digital Lab</a>
-    </div>
-</nav>
-
-<!-- FontAwesome Icons (jika belum ada) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-
-    <a href="https://pi-iainbabel.github.io/sdm/" style="color: #fff; background: rgba(201,168,76,0.25); text-decoration: none; font-size: 0.8rem; font-weight: 500; padding: 4px 12px; border-radius: 20px;"><i class="fas fa-users"></i> SPMI</a>
-</body>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistem Penjaminan Mutu Internal – Prodi Psikologi Islam IAIN SAS</title>
-    <meta name="description" content="Portofolio digital dokumen Sistem Penjaminan Mutu Internal (SPMI) Prodi Psikologi Islam IAIN Syaikh Abdurrahman Siddik Bangka Belitung" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>SPMI — Sistem Penjaminan Mutu Internal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
 
     <script>
         tailwind.config = {
@@ -52,335 +28,517 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#E8EDF8', 100: '#C5D2F0', 200: '#9DB5E8',
+                            300: '#6F95E0', 400: '#4F7FD8', 500: '#2A5CC4',
+                            600: '#1A3F8F', 700: '#122B6A', 800: '#0B1D45',
+                            900: '#060F28', 950: '#030714',
+                        },
+                        gold: '#D4AF37',
                     }
                 }
             }
         }
     </script>
+
+    <style>
+        body {
+            background-color: #060F28;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(11, 29, 69, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(79, 143, 255, 0.15);
+        }
+        .btn-nav {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-nav:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .btn-back-home {
+            background: #0f1b33;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 16px rgba(15, 27, 51, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-back-home:hover {
+            background: #1a2b4a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 27, 51, 0.25);
+        }
+        .card-glass {
+            background: rgba(11, 29, 69, 0.4);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .stat-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+        .card-portfolio {
+            background: rgba(11, 29, 69, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+        .card-portfolio:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        .filter-input {
+            background: rgba(11, 29, 69, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            border-radius: 10px;
+            padding: 10px 14px 10px 38px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .filter-input:focus {
+            outline: none;
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(11, 29, 69, 0.7);
+        }
+        .filter-input::placeholder {
+            color: #6a7a8a;
+        }
+        .btn-filter {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-filter:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+        }
+        .btn-filter.active {
+            background: linear-gradient(135deg, #1A3F8F, #2A5CC4);
+            color: white;
+            border-color: rgba(79, 143, 255, 0.3);
+            box-shadow: 0 4px 16px rgba(79, 143, 255, 0.2);
+        }
+        .badge-folder {
+            font-size: 0.55rem;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .filter-input { font-size: 0.7rem; padding: 8px 12px 8px 32px; }
+            .btn-filter { font-size: 0.6rem; padding: 6px 12px; }
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff; color: #000; }
+            .card-glass, .card-portfolio { background: #f1f5f9; border-color: #cbd5e1; }
+        }
+    </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased p-4 md:p-8">
+<body>
 
-    <div class="max-w-7xl mx-auto space-y-6">
-        
-          <header class="bg-gradient-to-br from-emerald-800 via-emerald-900 to-slate-900 rounded-3xl text-white p-6 md:p-10 shadow-xl shadow-emerald-950/10 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_50%)]"></div>
-            <div class="relative flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-                <div class="space-y-2">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 border border-emerald-400/20 text-emerald-300">
-                        <span class="flex h-1.5 w-1.5 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                        </span>
-                        Sistem Penjaminan Mutu Internal Terintegrasi
-                    </div>
-                    <h1 class="text-3xl md:text-5xl font-bold font-heading tracking-tight text-white">
-                        Prodi Psikologi Islam
-                    </h1>
-                    <p class="text-xs md:text-sm text-emerald-100/85 font-medium">
-                        Fakultas Dakwah dan Komunikasi Islam &bull; 
-                        <span class="text-emerald-300 font-semibold">IAIN Syaikh Abdurrahman Siddik Bangka Belitung</span>
-                    </p>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <span class="text-gold font-heading font-bold text-lg">Psychosophia</span>
+                    <span class="text-white/30">|</span>
+                    <span class="text-sm text-white/60 hidden sm:inline">SPMI · Sistem Penjaminan Mutu</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <!-- Tombol Kembali ke Home -->
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" class="btn-back-home">
+                        <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">Kembali ke Home</span>
+                    </a>
                 </div>
             </div>
+        </div>
+    </nav>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-white/10 text-xs text-emerald-100/90">
-                <div class="flex items-center gap-2.5"><i class="fas fa-calendar-alt text-emerald-400 text-sm"></i> Siklus Penjaminan: 2026</div>
-                <div class="flex items-center gap-2.5"><i class="fas fa-folder-open text-emerald-400 text-sm"></i> 10 Klaster Dokumen Utama</div>
-                <div class="flex items-center gap-2.5"><i class="fas fa-shield-alt text-emerald-400 text-sm"></i> Siklus PPEPP Lengkap</div>
-                <div class="flex items-center gap-2.5"><i class="fas fa-user-check text-emerald-400 text-sm"></i> Status Bukti: Valid & Akuntabel</div>
+    <!-- ===== HERO ===== -->
+    <section class="pt-24 pb-8 px-4 text-center bg-gradient-to-b from-navy-900 to-navy-950 border-b border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-semibold tracking-wider mb-4">
+                <i class="fas fa-clipboard-check mr-2"></i> SISTEM PENJAMINAN MUTU INTERNAL
             </div>
-        </header>
+            <h1 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                Prodi Psikologi Islam <span class="text-gold">SPMI</span>
+            </h1>
+            <p class="mt-3 text-slate-400 max-w-2xl mx-auto text-sm">
+                Fakultas Dakwah dan Komunikasi Islam · IAIN Syaikh Abdurrahman Siddik Bangka Belitung
+            </p>
+            <div class="mt-4 flex flex-wrap justify-center gap-3 text-xs">
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-calendar-alt text-gold mr-1.5"></i> Siklus 2026
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-folder-open text-gold mr-1.5"></i> 10 Klaster Dokumen
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-shield-alt text-gold mr-1.5"></i> Siklus PPEPP Lengkap
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-check-circle text-gold mr-1.5"></i> Bukti Valid &amp; Akuntabel
+                </span>
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== STATISTIK ===== -->
+    <section class="py-6 px-4 bg-navy-900/50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">10</div>
+                    <div class="text-xs text-slate-400">Klaster Dokumen</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">100%</div>
+                    <div class="text-xs text-slate-400">RTL AMI Selesai</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">2</div>
+                    <div class="text-xs text-slate-400">Temuan AMI 2025</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">85%</div>
+                    <div class="text-xs text-slate-400">Kesiapan Akreditasi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="px-4 py-8 max-w-7xl mx-auto space-y-8">
+
+        <!-- ===== GRAFIK & STATUS ===== -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-150 lg:col-span-2 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-sm md:text-base font-bold font-heading text-slate-800">Tren Temuan & Tindak Lanjut AMI (2023–2025)</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Penurunan angka temuan membuktikan siklus Pengendalian & Peningkatan berjalan optimal.</p>
-                        </div>
-                        <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md uppercase tracking-wider">Data RTM</span>
+
+            <!-- Grafik Tren AMI -->
+            <div class="card-glass p-6 lg:col-span-2">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="font-heading font-bold text-white text-sm">Tren Temuan &amp; Tindak Lanjut AMI</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Penurunan temuan membuktikan siklus PPEPP berjalan optimal.</p>
                     </div>
+                    <span class="text-[10px] font-bold text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Data RTM</span>
                 </div>
-                <div class="mt-4 h-56 md:h-60 relative">
+                <div class="h-56 md:h-60 relative">
                     <canvas id="amiChart"></canvas>
                 </div>
             </div>
 
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-150 flex flex-col justify-between">
+            <!-- Donut Status Kelengkapan -->
+            <div class="card-glass p-6 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-sm md:text-base font-bold font-heading text-slate-800">Status Kelengkapan Bukti Fisik</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Rasio kesiapan dokumen unggah pada Cloud Storage.</p>
+                    <h3 class="font-heading font-bold text-white text-sm">Status Kelengkapan Bukti Fisik</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Rasio kesiapan dokumen unggah.</p>
                 </div>
-                <div class="mt-4 h-48 md:h-52 relative flex justify-center items-center">
+                <div class="h-48 md:h-52 relative flex justify-center items-center mt-2">
                     <canvas id="completenessChart"></canvas>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-150 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <!-- ===== SEARCH & FILTER ===== -->
+        <div class="card-glass p-4 flex flex-col md:flex-row gap-4 justify-between items-center">
             <div class="relative w-full md:max-w-md">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
                     <i class="fas fa-search text-xs"></i>
                 </span>
-                <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Cari folder akreditasi atau nama dokumen (misal: AMI, Kurikulum, SK)..." class="w-full text-xs md:text-sm pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition-all">
+                <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Cari folder atau nama dokumen..." class="filter-input">
             </div>
-            <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
-                <button onclick="filterCategory('all')" class="category-btn active px-4 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-emerald-600 text-white">Semua Folder</button>
-                <button onclick="filterCategory('utama')" class="category-btn px-4 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">Siklus Utama Mutu</button>
-                <button onclick="filterCategory('tata-pamong')" class="category-btn px-4 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">Tata Pamong & Kurikulum</button>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto">
+                <button onclick="filterCategory('all')" class="btn-filter active" data-cat="all">Semua</button>
+                <button onclick="filterCategory('utama')" class="btn-filter" data-cat="utama">Siklus Mutu</button>
+                <button onclick="filterCategory('tata-pamong')" class="btn-filter" data-cat="tata-pamong">Tata Pamong</button>
             </div>
         </div>
 
+        <!-- ===== PORTFOLIO GRID ===== -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
 
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="utama">
-                <div class="space-y-4">
+            <!-- Folder 01: SPMI -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="utama">
+                <div>
                     <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
                             <i class="fas fa-book"></i>
                         </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 01</span>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 01</span>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">SPMI</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Kebijakan, Manual, Standar, dan Formulir Mutu resmi dari FDKI &amp; IAIN SAS Bangka Belitung.</p>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">SPMI</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Kebijakan, Manual, Standar, dan Formulir Mutu resmi dari FDKI &amp; IAIN SAS.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-emerald-600 bg-emerald-50 Stack px-2 py-0.5 rounded"><i class="fas fa-shield-alt mr-1"></i> Dokumen Pondasi</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1gHDoZgtIRd9lCYW73cjhmS5B8b4C8dzC&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-gold bg-gold/10 px-2 py-0.5 rounded"><i class="fas fa-shield-alt mr-1"></i> Dokumen Pondasi</span>
+                    <a href="https://drive.google.com/open?id=1gHDoZgtIRd9lCYW73cjhmS5B8b4C8dzC&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="utama">
-                <div class="space-y-4">
+            <!-- Folder 02: PPEPP -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="utama">
+                <div>
                     <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
                             <i class="fas fa-sync-alt"></i>
                         </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 02</span>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 02</span>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Siklus PPEPP</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Penetapan, Pelaksanaan, Evaluasi, Pengendalian, Peningkatan – termasuk beban mengajar, nilai, EDOM, dashboard IKU, dan jadwal.</p>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Siklus PPEPP</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Penetapan, Pelaksanaan, Evaluasi, Pengendalian, Peningkatan — termasuk EDOM, IKU, dan jadwal.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-purple-600 bg-purple-50 px-2 py-0.5 rounded"><i class="fas fa-redo mr-1"></i> PPEPP Terpenuhi</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=12bf0DvI0uSwLCusgDvbQKy3VH8AN4cMr&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-sky-400 bg-sky-400/10 px-2 py-0.5 rounded"><i class="fas fa-redo mr-1"></i> PPEPP Terpenuhi</span>
+                    <a href="https://drive.google.com/open?id=12bf0DvI0uSwLCusgDvbQKy3VH8AN4cMr&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="utama">
-                <div class="space-y-4">
+            <!-- Folder 03: AMI & RTM -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="utama">
+                <div>
                     <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
                             <i class="fas fa-clipboard-check"></i>
                         </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 03</span>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 03</span>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Laporan AMI &amp; RTM</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Audit Mutu Internal berkala periode 2023–2025, lengkap dengan notulen Rapat Tinjauan Manajemen, dan laporan rencana tindak lanjut.</p>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Laporan AMI &amp; RTM</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Audit Mutu Internal 2023–2025, notulen Rapat Tinjauan Manajemen, dan rencana tindak lanjut.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded"><i class="fas fa-chart-line mr-1"></i> Siklus Tahunan</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1KdVxskyS_HZWPhKx1My4vmR00AnVRzGn&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded"><i class="fas fa-chart-line mr-1"></i> Siklus Tahunan</span>
+                    <a href="https://drive.google.com/open?id=1KdVxskyS_HZWPhKx1My4vmR00AnVRzGn&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="utama">
-                <div class="space-y-4">
+            <!-- Folder 04: Pengakuan Mutu Eksternal -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="utama">
+                <div>
                     <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
                             <i class="fas fa-award"></i>
                         </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 04</span>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 04</span>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Pengakuan Mutu Eksternal</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Sertifikat akreditasi PI 2022, akreditasi institusi IAIN SAS 2025, dokumen tracer study, serta instrumen kepuasan pengguna lulusan.</p>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Pengakuan Mutu Eksternal</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Sertifikat akreditasi PI 2022, akreditasi institusi 2025, tracer study, dan kepuasan pengguna.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded"><i class="fas fa-external-link mr-1"></i> Output Eksternal</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1Kx_kwZTR6lxOcC8np1PBqwT_oXeeWeU1&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded"><i class="fas fa-external-link mr-1"></i> Output Eksternal</span>
+                    <a href="https://drive.google.com/open?id=1Kx_kwZTR6lxOcC8np1PBqwT_oXeeWeU1&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="tata-pamong">
-                <div class="space-y-4">
+            <!-- Folder 05: Pembiayaan -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="utama">
+                <div>
                     <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 06</span>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Kepemimpinan Publik</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Dokumen Memorandum of Understanding (MoU/MoA), implementasi kerja sama, dan jejaring kemitraan institusional prodi.</p>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded"><i class="fas fa-globe mr-1"></i> Jejaring Luar</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1Wue4LPXDwjQ46AXurH9uRal_Ob3mYwSx&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="tata-pamong">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 10</span>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Suasana Akademik</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Rencana Pembelajaran Semester (RPS) terintegrasi hasil penelitian/PkM dosen, rekapitulasi publikasi ilmiah, dan produk inovasi media terapi.</p>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded"><i class="fas fa-flask mr-1"></i> Riset & Inovasi</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1CsrGkvHTlFh8Ei8g8_2kmJXVd8Ow9gJk&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="tata-pamong">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 07</span>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Tata Pamong &amp; Organisasi</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Struktur tata pamong organisasi FDKI, uraian tugas pokok dan fungsi (Tupoksi) pengelola, serta berkas SK pengangkatan resmi.</p>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded"><i class="fas fa-gavel mr-1"></i> Legalitas Tata Pamong</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1XsU3I5jW-AANBURjQX-sVua9JFBmNiLh&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="tata-pamong">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
-                            <i class="fas fa-laptop"></i>
-                        </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 08</span>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Sistem Informasi &amp; TIK</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Sistem operasional SIAKAD Sevima, log pemanfaatan dashboard TIK, dan infrastruktur penunjang pembelajaran akreditasi.</p>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded"><i class="fas fa-server mr-1"></i> Infrastruktur</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1jEZZXfBnxwtb2XTVEvheW0nQlhv9rIFa&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="tata-pamong">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 09</span>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Kurikulum &amp; KKNI</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Penyusunan Kurikulum berbasis OBE (Outcome-Based Education) 2024, rumusan profil lulusan, dan peta matriks Capaian Pembelajaran Lulusan (CPL).</p>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-teal-600 bg-teal-50 px-2 py-0.5 rounded"><i class="fas fa-graduation-cap mr-1"></i> OBE Standard</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1SsLOoGR5yyM2onL4xTvW7px3s2YVkI6E&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card bg-white rounded-2xl border border-slate-150 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group" data-category="utama">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-start">
-                        <div class="p-3 rounded-xl bg-emerald-50 text-emerald-700 text-xl group-hover:scale-110 transition-transform">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
                             <i class="fas fa-coins"></i>
                         </div>
-                        <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase bg-slate-50 border border-slate-150 px-2.5 py-1 rounded-lg">Folder 05</span>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 05</span>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Pembiayaan &amp; Anggaran</h4>
-                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Petunjuk Operasional Kegiatan (POK) fakultas, Rencana Anggaran Biaya (RAB), dan laporan realisasi serapan dana investasi/operasional prodi.</p>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Pembiayaan &amp; Anggaran</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">POK fakultas, RAB, dan laporan realisasi serapan dana investasi/operasional prodi.</p>
                 </div>
-                <div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="text-[11px] font-medium text-rose-600 bg-rose-50 px-2 py-0.5 rounded"><i class="fas fa-wallet mr-1"></i> Keuangan Akuntabel</span>
-                    <a class="text-xs font-bold text-emerald-700 hover:text-emerald-950 inline-flex items-center gap-1.5 group-hover:underline" href="https://drive.google.com/open?id=1EQg9XC1NktDe06vp4IpFXRVrhq2Qz6wv&usp=drive_copy" target="_blank" rel="noopener">
-                        Buka Folder <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-rose-400 bg-rose-400/10 px-2 py-0.5 rounded"><i class="fas fa-wallet mr-1"></i> Keuangan Akuntabel</span>
+                    <a href="https://drive.google.com/open?id=1EQg9XC1NktDe06vp4IpFXRVrhq2Qz6wv&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder 06: Kepemimpinan Publik -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="tata-pamong">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 06</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Kepemimpinan Publik</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">MoU/MoA, implementasi kerja sama, dan jejaring kemitraan institusional.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded"><i class="fas fa-globe mr-1"></i> Jejaring Luar</span>
+                    <a href="https://drive.google.com/open?id=1Wue4LPXDwjQ46AXurH9uRal_Ob3mYwSx&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder 07: Tata Pamong -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="tata-pamong">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 07</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Tata Pamong &amp; Organisasi</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Struktur tata pamong FDKI, Tupoksi pengelola, dan SK pengangkatan resmi.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-slate-400 bg-slate-700/30 px-2 py-0.5 rounded"><i class="fas fa-gavel mr-1"></i> Legalitas</span>
+                    <a href="https://drive.google.com/open?id=1XsU3I5jW-AANBURjQX-sVua9JFBmNiLh&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder 08: Sistem Informasi & TIK -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="tata-pamong">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 08</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Sistem Informasi &amp; TIK</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">SIAKAD Sevima, log pemanfaatan dashboard TIK, dan infrastruktur penunjang.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded"><i class="fas fa-server mr-1"></i> Infrastruktur</span>
+                    <a href="https://drive.google.com/open?id=1jEZZXfBnxwtb2XTVEvheW0nQlhv9rIFa&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder 09: Kurikulum & KKNI -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="tata-pamong">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 09</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Kurikulum &amp; KKNI</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Kurikulum OBE 2024, profil lulusan, dan matriks CPL.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-teal-400 bg-teal-400/10 px-2 py-0.5 rounded"><i class="fas fa-graduation-cap mr-1"></i> OBE Standard</span>
+                    <a href="https://drive.google.com/open?id=1SsLOoGR5yyM2onL4xTvW7px3s2YVkI6E&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Folder 10: Suasana Akademik -->
+            <div class="card-portfolio p-6 flex flex-col justify-between group" data-category="tata-pamong">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div class="p-3 rounded-xl bg-gold/10 text-gold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <span class="badge-folder bg-navy-700/50 text-slate-400">Folder 10</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mt-3 group-hover:text-gold transition-colors">Suasana Akademik</h4>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">RPS terintegrasi riset, publikasi ilmiah, dan produk inovasi media terapi.</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] font-medium text-indigo-400 bg-indigo-400/10 px-2 py-0.5 rounded"><i class="fas fa-flask mr-1"></i> Riset &amp; Inovasi</span>
+                    <a href="https://drive.google.com/open?id=1CsrGkvHTlFh8Ei8g8_2kmJXVd8Ow9gJk&usp=drive_copy" target="_blank" class="text-xs font-bold text-gold hover:text-gold/80 inline-flex items-center gap-1.5 group-hover:underline">
+                        Buka <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 </div>
             </div>
 
         </div>
 
-        <footer class="bg-white rounded-3xl p-6 border border-slate-150 text-center shadow-sm">
-            <p class="text-xs text-slate-400">
-                Hak Cipta Sistem Penjaminan Mutu Internal &bull; Prodi Psikologi Islam &copy; 2026
-            </p>
+        <!-- ===== FOOTER ===== -->
+        <footer class="border-t border-white/5 pt-6 text-center text-xs text-slate-500">
+            <p>© 2024–2028 Sistem Penjaminan Mutu Internal · Prodi Psikologi Islam · FDKI · IAIN Syaikh Abdurrahman Siddik Bangka Belitung</p>
         </footer>
 
-    </div>
+    </section>
 
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT (Chart.js & Filter) -->
+    <!-- ============================================================ -->
     <script>
-        // 1. Chart Realisasi Temuan AMI
+        // ===== 1. CHART: Tren Temuan AMI =====
         const ctxAmi = document.getElementById('amiChart').getContext('2d');
         new Chart(ctxAmi, {
             type: 'bar',
             data: {
-                labels: ['Siklus AMI 2023', 'Siklus AMI 2024', 'Siklus AMI 2025'],
-                datasets: [
-                    {
-                        label: 'Rencana Tindak Lanjut Selesai (%)',
-                        type: 'line',
-                        data: [85, 94, 100],
-                        borderColor: '#059669',
-                        borderWidth: 3,
-                        pointBackgroundColor: '#ffffff',
-                        pointRadius: 5,
-                        fill: false,
-                        yAxisID: 'y1'
-                    },
-                    {
-                        label: 'Jumlah Temuan Minor/Mayor',
-                        data: [12, 7, 2],
-                        backgroundColor: 'rgba(148, 163, 184, 0.4)',
-                        borderRadius: 8,
-                        yAxisID: 'y'
-                    }
-                ]
+                labels: ['AMI 2023', 'AMI 2024', 'AMI 2025'],
+                datasets: [{
+                    label: 'Jumlah Temuan',
+                    data: [12, 7, 2],
+                    backgroundColor: 'rgba(212, 175, 55, 0.25)',
+                    borderColor: '#D4AF37',
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    yAxisID: 'y'
+                }, {
+                    label: 'RTL Selesai (%)',
+                    type: 'line',
+                    data: [85, 94, 100],
+                    borderColor: '#4FC3F7',
+                    backgroundColor: 'rgba(79, 195, 247, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#060F28',
+                    pointBorderColor: '#4FC3F7',
+                    pointRadius: 5,
+                    fill: true,
+                    tension: 0.3,
+                    yAxisID: 'y1'
+                }]
             },
             options: {
                 responsive: true,
@@ -388,30 +546,33 @@
                 plugins: {
                     legend: {
                         position: 'top',
-                        labels: { font: { family: 'Inter', size: 11, weight: 500 } }
+                        labels: { color: '#94a3b8', font: { family: 'Inter', size: 10, weight: 500 } }
                     }
                 },
                 scales: {
-                    x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 11 } } },
-                    y: { 
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false },
+                        ticks: { color: '#94a3b8', font: { family: 'Inter', size: 10 } }
+                    },
+                    y: {
                         position: 'left',
-                        grid: { color: '#f1f5f9' },
-                        ticks: { font: { family: 'Inter' }, stepSize: 3 },
-                        title: { display: true, text: 'Jumlah Temuan', font: { size: 10 } }
+                        grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false },
+                        ticks: { color: '#94a3b8', font: { family: 'Inter' }, stepSize: 3 },
+                        title: { display: true, text: 'Jumlah Temuan', color: '#94a3b8', font: { size: 9 } }
                     },
                     y1: {
                         position: 'right',
                         grid: { display: false },
-                        ticks: { font: { family: 'Inter' }, callback: value => value + '%' },
+                        ticks: { color: '#94a3b8', font: { family: 'Inter' }, callback: v => v + '%' },
                         min: 50,
                         max: 100,
-                        title: { display: true, text: 'Penyelesaian RTL (%)', font: { size: 10 } }
+                        title: { display: true, text: 'Penyelesaian RTL (%)', color: '#94a3b8', font: { size: 9 } }
                     }
                 }
             }
         });
 
-        // 2. Chart Kelengkapan Bukti Fisik (Donut Chart)
+        // ===== 2. CHART: Kelengkapan Bukti =====
         const ctxComp = document.getElementById('completenessChart').getContext('2d');
         new Chart(ctxComp, {
             type: 'doughnut',
@@ -419,9 +580,9 @@
                 labels: ['Dokumen Siap', 'Proses Sinkronisasi'],
                 datasets: [{
                     data: [10, 0],
-                    backgroundColor: ['#059669', '#cbd5e1'],
+                    backgroundColor: ['#D4AF37', '#1A3F8F'],
                     borderWidth: 4,
-                    borderColor: '#ffffff'
+                    borderColor: '#060F28'
                 }]
             },
             options: {
@@ -430,50 +591,54 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        labels: { boxWidth: 12, font: { family: 'Inter', size: 11 } }
+                        labels: { color: '#94a3b8', boxWidth: 12, font: { family: 'Inter', size: 10 } }
                     }
                 },
                 cutout: '75%'
             }
         });
 
-        // 3. Real-time Search Filter Logic
+        // ===== 3. SEARCH FILTER =====
         function filterCards() {
             const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('#portfolioGrid .card');
-            
+            const cards = document.querySelectorAll('#portfolioGrid .card-portfolio');
             cards.forEach(card => {
                 const title = card.querySelector('h4').innerText.toLowerCase();
                 const desc = card.querySelector('p').innerText.toLowerCase();
-                const code = card.querySelector('.uppercase').innerText.toLowerCase();
-                
-                if (title.includes(input) || desc.includes(input) || code.includes(input)) {
-                    card.style.display = "";
+                const folder = card.querySelector('.badge-folder').innerText.toLowerCase();
+                if (title.includes(input) || desc.includes(input) || folder.includes(input)) {
+                    card.style.display = '';
                 } else {
-                    card.style.display = "none";
+                    card.style.display = 'none';
                 }
             });
         }
 
-        // 4. Tab Category Filter Logic
+        // ===== 4. CATEGORY FILTER =====
         function filterCategory(category) {
-            const buttons = document.querySelectorAll('.category-btn');
-            buttons.forEach(btn => btn.classList.remove('bg-emerald-600', 'text-white'));
-            buttons.forEach(btn => btn.classList.add('bg-slate-100', 'text-slate-600'));
+            // Update button active state
+            document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.btn-filter[data-cat="${category}"]`).classList.add('active');
 
-            const activeBtn = event.currentTarget;
-            activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
-            activeBtn.classList.add('bg-emerald-600', 'text-white');
-
-            const cards = document.querySelectorAll('#portfolioGrid .card');
+            const cards = document.querySelectorAll('#portfolioGrid .card-portfolio');
             cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = "";
+                const cat = card.getAttribute('data-category');
+                if (category === 'all' || cat === category) {
+                    card.style.display = '';
                 } else {
-                    card.style.display = "none";
+                    card.style.display = 'none';
                 }
             });
+            // Reset search input
+            document.getElementById('searchInput').value = '';
         }
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default: all filter aktif
+            document.querySelector('.btn-filter[data-cat="all"]').classList.add('active');
+        });
     </script>
+
 </body>
 </html>
