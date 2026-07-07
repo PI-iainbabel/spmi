@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pelaksanaan Standar · SPMI · Psikologi Islam</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#E8EDF8', 100: '#C5D2F0', 200: '#9DB5E8',
+                            300: '#6F95E0', 400: '#4F7FD8', 500: '#2A5CC4',
+                            600: '#1A3F8F', 700: '#122B6A', 800: '#0B1D45',
+                            900: '#060F28', 950: '#030714',
+                        },
+                        gold: '#D4AF37',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #060F28;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .glass-nav {
+            background: rgba(11, 29, 69, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(79, 143, 255, 0.15);
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+        .btn-nav-home {
+            background: rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .btn-nav-home:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+        .btn-nav-tree {
+            background: rgba(82, 183, 136, 0.06);
+            color: #52B788;
+            border-color: rgba(82, 183, 136, 0.1);
+        }
+        .btn-nav-tree:hover {
+            background: rgba(82, 183, 136, 0.12);
+            border-color: #52B788;
+            transform: translateY(-2px);
+        }
+        .btn-nav-drive {
+            background: rgba(26, 115, 232, 0.08);
+            color: #4F7FD8;
+            border-color: rgba(26, 115, 232, 0.1);
+        }
+        .btn-nav-drive:hover {
+            background: rgba(26, 115, 232, 0.15);
+            border-color: #4F7FD8;
+            transform: translateY(-2px);
+        }
+        .btn-nav-back {
+            background: rgba(212, 175, 55, 0.06);
+            color: #D4AF37;
+            border-color: rgba(212, 175, 55, 0.1);
+        }
+        .btn-nav-back:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 4px;
+            font-size: 0.8rem;
+            padding: 8px 0;
+        }
+        .breadcrumb a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .breadcrumb a:hover {
+            color: #D4AF37;
+        }
+        .breadcrumb .separator {
+            color: #475569;
+            font-size: 0.6rem;
+            margin: 0 2px;
+        }
+        .breadcrumb .current {
+            color: #e2e8f0;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb .current i {
+            color: #D4AF37;
+            font-size: 0.9rem;
+        }
+
+        .card-glass {
+            background: rgba(11, 29, 69, 0.4);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .stat-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .doc-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .doc-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateX(4px);
+        }
+        .doc-card .doc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.08);
+            color: #D4AF37;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .doc-card .doc-title {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .doc-card .doc-desc {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .doc-card .doc-status {
+            margin-left: auto;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            white-space: nowrap;
+        }
+
+        .analysis-narrative {
+            background: linear-gradient(135deg, rgba(11, 29, 69, 0.8), rgba(26, 63, 143, 0.2));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 28px 32px;
+        }
+        .analysis-narrative h3 {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .analysis-narrative p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .analysis-narrative strong {
+            color: #fff;
+        }
+        .analysis-narrative .highlight {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .breadcrumb { font-size: 0.7rem; }
+            .btn-nav { font-size: 0.65rem; padding: 4px 10px; }
+            .doc-card { flex-wrap: wrap; }
+            .doc-card .doc-status { margin-left: 0; }
+            .analysis-narrative { padding: 16px 18px; }
+            .analysis-narrative p { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================== -->
+    <!-- NAVBAR DENGAN BREADCRUMB                                   -->
+    <!-- ========================================================== -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between py-3 gap-2">
+
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" title="Kembali ke Home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <a href="https://pi-iainbabel.github.io/spmi/" title="Kembali ke SPMI">
+                        <i class="fas fa-clipboard-check"></i> SPMI
+                    </a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">
+                        <i class="fas fa-play"></i> Pelaksanaan Standar
+                    </span>
+                </div>
+
+                <!-- Tombol navigasi kanan -->
+                <div class="flex items-center gap-2 flex-wrap">
+                    <a href="https://drive.google.com/drive/u/1/folders/12bf0DvI0uSwLCusgDvbQKy3VH8AN4cMr" target="_blank" class="btn-nav btn-nav-drive">
+                        <i class="fas fa-folder-open"></i> Drive Folder
+                    </a>
+                    <a href="https://pi-iainbabel.github.io/spmi/budaya-mutu.html" class="btn-nav btn-nav-back">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Budaya Mutu
+                    </a>
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/struktur-konten.html" class="btn-nav btn-nav-tree" title="Pohon Pengetahuan">
+                        <i class="fas fa-tree"></i> Tree
+                    </a>
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" class="btn-nav btn-nav-home" title="Kembali ke Home">
+                        <i class="fas fa-arrow-left"></i> Home
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================================== -->
+    <!-- SPACER                                                     -->
+    <!-- ========================================================== -->
+    <div class="pt-20"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="pt-8 pb-6 px-4 text-center bg-gradient-to-b from-navy-900 to-navy-950 border-b border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-semibold tracking-wider mb-4">
+                <i class="fas fa-play mr-2"></i> SPMI — FASE 2
+            </div>
+            <h1 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                Pelaksanaan <span class="text-gold">Standar</span>
+            </h1>
+            <p class="mt-3 text-slate-400 max-w-2xl mx-auto text-sm">
+                Implementasi standar, formulir, dan dokumen operasional SPMI · Program Studi Psikologi Islam
+            </p>
+            <div class="mt-4 flex flex-wrap justify-center gap-3 text-xs">
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-file-alt text-gold mr-1.5"></i> 15+ Dokumen
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-emerald-400/20 border border-emerald-400/30 text-emerald-300">
+                    <i class="fas fa-check-circle mr-1.5"></i> 100% Tersedia
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-calendar-alt text-gold mr-1.5"></i> 2022–2025
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+    <section class="py-6 px-4 bg-navy-900/50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">15+</div>
+                    <div class="text-xs text-slate-400">Dokumen</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-emerald-400">8</div>
+                    <div class="text-xs text-slate-400">Kategori Dokumen</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">100%</div>
+                    <div class="text-xs text-slate-400">Kelengkapan</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-sky-400">2025</div>
+                    <div class="text-xs text-slate-400">Update Terakhir</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- ===== DESKRIPSI ISI FOLDER ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-2xl text-gold flex-shrink-0 mt-1">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm">📂 Isi Folder — Pelaksanaan Standar</h3>
+                    <div class="text-sm text-slate-300 mt-1 leading-relaxed space-y-2">
+                        <p>
+                            Folder ini memuat <span class="text-gold font-semibold">dokumen operasional dan bukti implementasi</span> 
+                            dari standar yang telah ditetapkan dalam SPMI. Dokumen-dokumen ini mencerminkan pelaksanaan kegiatan 
+                            tridharma dan tata kelola di Program Studi Psikologi Islam, meliputi:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300 pl-2">
+                            <li><span class="text-white font-medium">Beban Mengajar Dosen</span> — rekapitulasi beban SKS ajar dosen per semester (2022–2025).</li>
+                            <li><span class="text-white font-medium">Jadwal Mengajar</span> — jadwal mengajar per dosen FDKI per semester.</li>
+                            <li><span class="text-white font-medium">Kode Etik, Panduan Lab, SOP</span> — dokumen etika, panduan laboratorium, dan SOP fakultas &amp; prodi.</li>
+                            <li><span class="text-white font-medium">Laporan Nilai Mahasiswa</span> — laporan nilai mahasiswa Prodi PI per semester (2022–2025).</li>
+                            <li><span class="text-white font-medium">Dashboard IKU</span> — dashboard Indikator Kinerja Utama FDKI 2023–2026.</li>
+                            <li><span class="text-white font-medium">Guide Sevima untuk Dosen</span> — panduan operasional SIAKAD CLOUD bagi dosen.</li>
+                            <li><span class="text-white font-medium">Pelaksanaan Standar Penelitian</span> — monitoring, evaluasi, dan pedoman penelitian.</li>
+                            <li><span class="text-white font-medium">Perencanaan dan Keuangan</span> — dokumen perencanaan, anggaran, dan serapan dana.</li>
+                        </ul>
+                        <p class="mt-2 text-slate-400 text-xs">
+                            <i class="fas fa-info-circle text-gold mr-1"></i> Seluruh dokumen merupakan bukti implementasi standar yang telah ditetapkan 
+                            dan menjadi bagian dari siklus PPEPP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAFTAR DOKUMEN ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm flex items-center gap-2">
+                        <i class="fas fa-list-ul text-gold"></i> Daftar Dokumen Pelaksanaan Standar
+                    </h3>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Dokumen operasional dan bukti implementasi standar</p>
+                </div>
+                <span class="text-[10px] text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
+                    <i class="fas fa-check-circle mr-1"></i> 8 Kategori
+                </span>
+            </div>
+
+            <div class="space-y-3">
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Beban Mengajar Dosen</div>
+                        <div class="doc-desc">Rekapitulasi beban SKS ajar dosen FDKI per semester (2022–2025)</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Jadwal Mengajar Per Dosen</div>
+                        <div class="doc-desc">Jadwal mengajar per dosen FDKI per semester (2022–2025)</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-contract"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Kode Etik, Panduan Lab, SOP</div>
+                        <div class="doc-desc">Kode Etik Mahasiswa, Panduan Laboratorium, SOP Fakultas &amp; Prodi</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan Nilai Mahasiswa</div>
+                        <div class="doc-desc">Laporan nilai mahasiswa Prodi PI per semester (2022–2025)</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-chart-simple"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Dashboard IKU FDKI</div>
+                        <div class="doc-desc">Indikator Kinerja Utama Fakultas Dakwah dan Komunikasi Islam 2023–2026</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-book"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Guide Sevima untuk Dosen</div>
+                        <div class="doc-desc">Panduan operasional SIAKAD CLOUD: bimbingan online, validasi KRS, pengisian nilai</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-flask"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Pelaksanaan Standar Penelitian</div>
+                        <div class="doc-desc">Monitoring &amp; evaluasi penelitian, pedoman penelitian</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-coins"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Perencanaan dan Keuangan</div>
+                        <div class="doc-desc">DIPA, RAB, serapan anggaran, RHK organisasi, evaluasi kelembagaan</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+            </div>
+
+            <div class="mt-4 text-[10px] text-slate-500 text-center">
+                <i class="fas fa-info-circle mr-1"></i> Seluruh dokumen dapat diakses melalui folder drive resmi.
+            </div>
+        </div>
+
+        <!-- ===== DOKUMEN PENDUKUNG LAINNYA (TABEL DAFTAR) ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">📄</span>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm">Dokumen Pendukung Lainnya</h3>
+                    <p class="text-[10px] text-slate-400">Daftar dokumen tambahan dalam folder pelaksanaan standar (tanpa tautan)</p>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="w-12 text-center">No</th>
+                            <th class="text-left">Nama Dokumen</th>
+                            <th class="text-left">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center text-gold font-bold">1</td>
+                            <td class="text-white text-xs">Akselerasi Penulisan Proposal Skripsi 2023-2024</td>
+                            <td class="text-slate-300 text-xs">Program akselerasi proposal skripsi mahasiswa</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">2</td>
+                            <td class="text-white text-xs">SOP TIPD &amp; PDDikti</td>
+                            <td class="text-slate-300 text-xs">Standar Operasional Prosedur TIPD dan PDDikti</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">3</td>
+                            <td class="text-white text-xs">Survey Monitoring Penyelesaian Skripsi</td>
+                            <td class="text-slate-300 text-xs">Hasil survei monitoring percepatan studi</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">4</td>
+                            <td class="text-white text-xs">Pedoman Pengelolaan SDM</td>
+                            <td class="text-slate-300 text-xs">Panduan pengelolaan sumber daya manusia</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">5</td>
+                            <td class="text-white text-xs">Naskah Akademik Usulan Prodi Psikologi Islam</td>
+                            <td class="text-slate-300 text-xs">Naskah akademik pendirian prodi</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">6</td>
+                            <td class="text-white text-xs">Rekap Angket (EDOM) per Semester</td>
+                            <td class="text-slate-300 text-xs">Rekapitulasi hasil evaluasi dosen oleh mahasiswa</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">7</td>
+                            <td class="text-white text-xs">Laporan Monitoring Perkuliahan</td>
+                            <td class="text-slate-300 text-xs">Laporan monitoring kegiatan perkuliahan</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">8</td>
+                            <td class="text-white text-xs">Pedoman Penelitian dan Pengabdian</td>
+                            <td class="text-slate-300 text-xs">Panduan pelaksanaan penelitian dan pengabdian</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-3 text-[10px] text-slate-500 text-center">
+                <i class="fas fa-info-circle mr-1"></i> Daftar ini merupakan dokumen pendukung yang tersedia dalam folder, bukan tautan aktif.
+            </div>
+        </div>
+
+        <!-- ===== NARASI ANALISIS ===== -->
+        <div class="analysis-narrative">
+            <h3>
+                <i class="fas fa-clipboard-check"></i> Analisis Pelaksanaan Standar SPMI
+                <span class="text-[10px] text-slate-400 font-normal ml-2">— siap tempel ke Sapto</span>
+            </h3>
+
+            <p>
+                Tahap <span class="highlight">Pelaksanaan Standar</span> merupakan implementasi nyata dari standar yang telah ditetapkan dalam SPMI. 
+                Program Studi Psikologi Islam telah melaksanakan seluruh standar melalui berbagai <strong class="text-white">kegiatan tridharma</strong> 
+                dan <strong class="text-white">tata kelola</strong> yang terdokumentasi secara lengkap dalam folder pelaksanaan standar.
+            </p>
+
+            <p>
+                <strong class="text-gold">1. Pelaksanaan Standar Pembelajaran:</strong>
+                Bukti pelaksanaan standar pembelajaran tercermin dalam <strong class="text-white">jadwal mengajar per dosen</strong>, 
+                <strong class="text-white">beban mengajar dosen</strong>, dan <strong class="text-white">laporan nilai mahasiswa</strong> 
+                yang tersedia secara periodik (2022–2025). Dokumen <span class="highlight">Kode Etik, Panduan Lab, dan SOP</span> 
+                menjadi pedoman operasional bagi dosen, mahasiswa, dan tenaga kependidikan dalam menjalankan kegiatan akademik.
+            </p>
+
+            <p>
+                <strong class="text-gold">2. Pelaksanaan Standar Penelitian dan Pengabdian:</strong>
+                Folder <span class="highlight">Pelaksanaan Standar Penelitian</span> memuat monitoring, evaluasi, dan pedoman penelitian 
+                yang menjadi acuan bagi dosen dan mahasiswa dalam kegiatan riset. Program <strong class="text-white">Akselerasi Penulisan Proposal Skripsi</strong> 
+                juga merupakan bukti implementasi standar dalam mendukung percepatan studi mahasiswa.
+            </p>
+
+            <p>
+                <strong class="text-gold">3. Pelaksanaan Standar Pengelolaan dan Pembiayaan:</strong>
+                Dokumen <span class="highlight">Perencanaan dan Keuangan</span> (DIPA, RAB, serapan anggaran, RHK) menunjukkan 
+                bahwa prodi telah melaksanakan standar pengelolaan dan pembiayaan secara <strong class="text-white">transparan dan akuntabel</strong>. 
+                <strong class="text-white">Dashboard IKU FDKI</strong> menjadi alat monitoring capaian kinerja secara berkala.
+            </p>
+
+            <p>
+                <strong class="text-gold">4. Digitalisasi dan Sistem Informasi:</strong>
+                Ketersediaan <span class="highlight">Guide Sevima untuk Dosen</span> dan <span class="highlight">SOP TIPD</span> 
+                menunjukkan bahwa prodi telah mengimplementasikan <strong class="text-white">sistem informasi akademik</strong> 
+                (SIAKAD CLOUD) sebagai bagian dari pelaksanaan standar. Hal ini mendukung <span class="highlight">digitalisasi</span> 
+                proses akademik dan administrasi.
+            </p>
+
+            <p class="mb-0">
+                <strong class="text-gold">Kesimpulan:</strong> Tahap Pelaksanaan Standar SPMI di Program Studi Psikologi Islam telah 
+                <span class="highlight">100% terlaksana</span> dengan dokumen bukti yang lengkap dan terstruktur. Seluruh dokumen 
+                operasional dan bukti implementasi tersedia secara periodik, mencerminkan <strong class="text-white">konsistensi</strong> 
+                dan <strong class="text-white">komitmen prodi</strong> dalam menjalankan siklus PPEPP secara berkelanjutan.
+            </p>
+
+            <div class="mt-4 pt-4 border-t border-gold/20 text-[10px] text-slate-500">
+                <i class="fas fa-folder-open mr-1 text-gold"></i> Akses cepat: 
+                <a href="https://drive.google.com/drive/u/1/folders/12bf0DvI0uSwLCusgDvbQKy3VH8AN4cMr" target="_blank" class="text-gold hover:text-white transition-colors">Folder Pelaksanaan Standar</a>
+            </div>
+        </div>
+
+        <!-- ===== PATH NAVIGASI BAWAH ===== -->
+        <div class="text-center border-t border-white/5 pt-6">
+            <p class="text-xs text-slate-500 mb-2">
+                <i class="fas fa-sitemap mr-1"></i> Navigasi
+            </p>
+            <div class="flex flex-wrap justify-center gap-1 text-[0.6rem] text-slate-600">
+                <a href="https://pi-iainbabel.github.io/psychosophia-hub/" class="hover:text-slate-400">Home</a>
+                <span>/</span>
+                <a href="https://pi-iainbabel.github.io/spmi/" class="hover:text-slate-400">SPMI</a>
+                <span>/</span>
+                <span class="text-slate-400">Pelaksanaan Standar</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-white/5 bg-navy-900/50 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-xs text-slate-500">
+                &copy; 2025 Program Studi Psikologi Islam · FDKI · IAIN Syaikh Abdurrahman Siddik Bangka Belitung
+            </p>
+            <p class="text-[10px] text-slate-600 mt-1">SPMI — Pelaksanaan Standar · Siklus PPEPP</p>
+        </div>
+    </footer>
+
+</body>
+</html>
