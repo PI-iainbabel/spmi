@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan SPMI & PD Dikti · SPMI · Psikologi Islam</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#E8EDF8', 100: '#C5D2F0', 200: '#9DB5E8',
+                            300: '#6F95E0', 400: '#4F7FD8', 500: '#2A5CC4',
+                            600: '#1A3F8F', 700: '#122B6A', 800: '#0B1D45',
+                            900: '#060F28', 950: '#030714',
+                        },
+                        gold: '#D4AF37',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #060F28;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .glass-nav {
+            background: rgba(11, 29, 69, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(79, 143, 255, 0.15);
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+        .btn-nav-home {
+            background: rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .btn-nav-home:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+        .btn-nav-tree {
+            background: rgba(82, 183, 136, 0.06);
+            color: #52B788;
+            border-color: rgba(82, 183, 136, 0.1);
+        }
+        .btn-nav-tree:hover {
+            background: rgba(82, 183, 136, 0.12);
+            border-color: #52B788;
+            transform: translateY(-2px);
+        }
+        .btn-nav-drive {
+            background: rgba(26, 115, 232, 0.08);
+            color: #4F7FD8;
+            border-color: rgba(26, 115, 232, 0.1);
+        }
+        .btn-nav-drive:hover {
+            background: rgba(26, 115, 232, 0.15);
+            border-color: #4F7FD8;
+            transform: translateY(-2px);
+        }
+        .btn-nav-back {
+            background: rgba(212, 175, 55, 0.06);
+            color: #D4AF37;
+            border-color: rgba(212, 175, 55, 0.1);
+        }
+        .btn-nav-back:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 4px;
+            font-size: 0.8rem;
+            padding: 8px 0;
+        }
+        .breadcrumb a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .breadcrumb a:hover {
+            color: #D4AF37;
+        }
+        .breadcrumb .separator {
+            color: #475569;
+            font-size: 0.6rem;
+            margin: 0 2px;
+        }
+        .breadcrumb .current {
+            color: #e2e8f0;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb .current i {
+            color: #D4AF37;
+            font-size: 0.9rem;
+        }
+
+        .card-glass {
+            background: rgba(11, 29, 69, 0.4);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .stat-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .doc-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .doc-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateX(4px);
+        }
+        .doc-card .doc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.08);
+            color: #D4AF37;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .doc-card .doc-title {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .doc-card .doc-desc {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .doc-card .doc-status {
+            margin-left: auto;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            white-space: nowrap;
+        }
+
+        .analysis-narrative {
+            background: linear-gradient(135deg, rgba(11, 29, 69, 0.8), rgba(26, 63, 143, 0.2));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 28px 32px;
+        }
+        .analysis-narrative h3 {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .analysis-narrative p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .analysis-narrative strong {
+            color: #fff;
+        }
+        .analysis-narrative .highlight {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .breadcrumb { font-size: 0.7rem; }
+            .btn-nav { font-size: 0.65rem; padding: 4px 10px; }
+            .doc-card { flex-wrap: wrap; }
+            .doc-card .doc-status { margin-left: 0; }
+            .analysis-narrative { padding: 16px 18px; }
+            .analysis-narrative p { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================== -->
+    <!-- NAVBAR DENGAN BREADCRUMB                                   -->
+    <!-- ========================================================== -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between py-3 gap-2">
+
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" title="Kembali ke Home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <a href="https://pi-iainbabel.github.io/spmi/" title="Kembali ke SPMI">
+                        <i class="fas fa-clipboard-check"></i> SPMI
+                    </a>
+                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="current">
+                        <i class="fas fa-file-alt"></i> Laporan SPMI & PD Dikti
+                    </span>
+                </div>
+
+                <!-- Tombol navigasi kanan -->
+                <div class="flex items-center gap-2 flex-wrap">
+                    <a href="https://drive.google.com/drive/u/1/folders/1Kx_kwZTR6lxOcC8np1PBqwT_oXeeWeU1" target="_blank" class="btn-nav btn-nav-drive">
+                        <i class="fas fa-folder-open"></i> Drive Folder
+                    </a>
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/struktur-konten.html" class="btn-nav btn-nav-tree" title="Pohon Pengetahuan">
+                        <i class="fas fa-tree"></i> Tree
+                    </a>
+                    <a href="https://pi-iainbabel.github.io/psychosophia-hub/" class="btn-nav btn-nav-home" title="Kembali ke Home">
+                        <i class="fas fa-arrow-left"></i> Home
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================================== -->
+    <!-- SPACER                                                     -->
+    <!-- ========================================================== -->
+    <div class="pt-20"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="pt-8 pb-6 px-4 text-center bg-gradient-to-b from-navy-900 to-navy-950 border-b border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-semibold tracking-wider mb-4">
+                <i class="fas fa-file-alt mr-2"></i> SPMI — FASE 5
+            </div>
+            <h1 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                Laporan SPMI &amp; <span class="text-gold">PD Dikti</span>
+            </h1>
+            <p class="mt-3 text-slate-400 max-w-2xl mx-auto text-sm">
+                Laporan implementasi SPMI, hasil AMI, dan bukti pelaporan ke PDDikti · Program Studi Psikologi Islam
+            </p>
+            <div class="mt-4 flex flex-wrap justify-center gap-3 text-xs">
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-file-alt text-gold mr-1.5"></i> 10+ Dokumen
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-emerald-400/20 border border-emerald-400/30 text-emerald-300">
+                    <i class="fas fa-check-circle mr-1.5"></i> 100% Tersedia
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-navy-800/60 border border-white/5 text-slate-300">
+                    <i class="fas fa-calendar-alt text-gold mr-1.5"></i> 2022–2025
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+    <section class="py-6 px-4 bg-navy-900/50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">10+</div>
+                    <div class="text-xs text-slate-400">Dokumen</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-emerald-400">5</div>
+                    <div class="text-xs text-slate-400">Tahun Pelaporan</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-gold">100%</div>
+                    <div class="text-xs text-slate-400">Kelengkapan</div>
+                </div>
+                <div class="stat-card bg-navy-800/30 rounded-xl p-4 text-center border border-white/5">
+                    <div class="text-2xl font-bold text-sky-400">2025</div>
+                    <div class="text-xs text-slate-400">Update Terakhir</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- ===== DESKRIPSI ISI FOLDER ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-2xl text-gold flex-shrink-0 mt-1">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm">📂 Isi Folder — Laporan SPMI &amp; PD Dikti</h3>
+                    <div class="text-sm text-slate-300 mt-1 leading-relaxed space-y-2">
+                        <p>
+                            Folder ini memuat <span class="text-gold font-semibold">laporan implementasi SPMI, hasil audit, dan bukti pelaporan ke PDDikti</span> 
+                            sebagai bentuk akuntabilitas dan transparansi mutu program studi. Dokumen-dokumen dalam folder ini mencakup:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300 pl-2">
+                            <li><span class="text-white font-medium">Laporan SPMI Semester/Tahunan</span> — laporan implementasi SPMI per periode.</li>
+                            <li><span class="text-white font-medium">Laporan AMI</span> — laporan audit mutu internal per tahun.</li>
+                            <li><span class="text-white font-medium">Bukti Pelaporan ke PDDikti</span> — dokumentasi pengisian data ke PDDikti.</li>
+                            <li><span class="text-white font-medium">Sertifikat Akreditasi</span> — sertifikat akreditasi program studi dan institusi.</li>
+                            <li><span class="text-white font-medium">Dokumen Pengakuan Efektivitas SPMI</span> — bukti pengakuan dari stakeholder.</li>
+                        </ul>
+                        <p class="mt-2 text-slate-400 text-xs">
+                            <i class="fas fa-info-circle text-gold mr-1"></i> Laporan SPMI dan PDDikti menjadi bukti <strong class="text-white">akuntabilitas</strong> 
+                            prodi dalam menjalankan siklus PPEPP dan memenuhi standar akreditasi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DAFTAR DOKUMEN ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm flex items-center gap-2">
+                        <i class="fas fa-list-ul text-gold"></i> Daftar Dokumen Laporan SPMI &amp; PD Dikti
+                    </h3>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Laporan dan bukti akuntabilitas mutu</p>
+                </div>
+                <span class="text-[10px] text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
+                    <i class="fas fa-check-circle mr-1"></i> 7 Kategori
+                </span>
+            </div>
+
+            <div class="space-y-3">
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan SPMI Semester Ganjil 2022/2023</div>
+                        <div class="doc-desc">Laporan implementasi SPMI semester ganjil 2022/2023</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan SPMI Semester Genap 2022/2023</div>
+                        <div class="doc-desc">Laporan implementasi SPMI semester genap 2022/2023</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan SPMI Tahun 2024</div>
+                        <div class="doc-desc">Laporan tahunan implementasi SPMI 2024</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan AMI 2023</div>
+                        <div class="doc-desc">Laporan Audit Mutu Internal tahun 2023</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Laporan AMI 2024</div>
+                        <div class="doc-desc">Laporan Audit Mutu Internal tahun 2024</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Bukti Pelaporan ke PDDikti</div>
+                        <div class="doc-desc">Dokumentasi pengisian data ke PDDikti per semester</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="doc-title">Sertifikat Akreditasi</div>
+                        <div class="doc-desc">Sertifikat akreditasi program studi dan institusi</div>
+                    </div>
+                    <span class="doc-status"><i class="fas fa-check-circle mr-1"></i> Tersedia</span>
+                </div>
+            </div>
+
+            <div class="mt-4 text-[10px] text-slate-500 text-center">
+                <i class="fas fa-info-circle mr-1"></i> Seluruh dokumen dapat diakses melalui folder drive resmi.
+            </div>
+        </div>
+
+        <!-- ===== DOKUMEN PENDUKUNG LAINNYA ===== -->
+        <div class="card-glass p-6 border-gold/10">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">📄</span>
+                <div>
+                    <h3 class="font-heading font-bold text-white text-sm">Dokumen Pendukung Lainnya</h3>
+                    <p class="text-[10px] text-slate-400">Daftar dokumen tambahan dalam folder laporan SPMI</p>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="w-12 text-center">No</th>
+                            <th class="text-left">Nama Dokumen</th>
+                            <th class="text-left">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center text-gold font-bold">1</td>
+                            <td class="text-white text-xs">Rekapitulasi Capaian Standar SPMI</td>
+                            <td class="text-slate-300 text-xs">Rekap capaian standar per tahun akademik</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">2</td>
+                            <td class="text-white text-xs">Laporan Kinerja Program Studi</td>
+                            <td class="text-slate-300 text-xs">Laporan kinerja prodi ke PDDikti</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">3</td>
+                            <td class="text-white text-xs">Dokumen Pengakuan Efektivitas SPMI</td>
+                            <td class="text-slate-300 text-xs">Bukti pengakuan dari stakeholder</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">4</td>
+                            <td class="text-white text-xs">Laporan Survei Kepuasan Stakeholder</td>
+                            <td class="text-slate-300 text-xs">Hasil survei kepuasan eksternal</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-gold font-bold">5</td>
+                            <td class="text-white text-xs">Sertifikat Akreditasi Institusi</td>
+                            <td class="text-slate-300 text-xs">Sertifikat akreditasi IAIN SAS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-3 text-[10px] text-slate-500 text-center">
+                <i class="fas fa-info-circle mr-1"></i> Daftar ini merupakan dokumen pendukung yang tersedia dalam folder, bukan tautan aktif.
+            </div>
+        </div>
+
+        <!-- ===== NARASI ANALISIS ===== -->
+        <div class="analysis-narrative">
+            <h3>
+                <i class="fas fa-clipboard-check"></i> Analisis Laporan SPMI dan PD Dikti
+                <span class="text-[10px] text-slate-400 font-normal ml-2">— siap tempel ke Sapto</span>
+            </h3>
+
+            <p>
+                Tahap <span class="highlight">Laporan SPMI dan PD Dikti</span> merupakan fase akhir dalam siklus PPEPP yang mendokumentasikan 
+                seluruh implementasi SPMI dan menjadi bukti <strong class="text-white">akuntabilitas</strong> program studi kepada pemangku kepentingan. 
+                Program Studi Psikologi Islam telah melaksanakan pelaporan secara <strong class="text-white">periodik dan terstruktur</strong> 
+                dengan dokumen yang lengkap dan terdokumentasi dengan baik.
+            </p>
+
+            <p>
+                <strong class="text-gold">1. Laporan SPMI:</strong>
+                Laporan SPMI disusun secara <span class="highlight">semesteran dan tahunan</span> sebagai bentuk pertanggungjawaban 
+                implementasi SPMI. Laporan ini memuat <strong class="text-white">capaian standar, kendala, dan rencana perbaikan</strong> 
+                yang telah dilaksanakan, serta menjadi bahan evaluasi bagi pimpinan dan stakeholder.
+            </p>
+
+            <p>
+                <strong class="text-gold">2. Laporan AMI:</strong>
+                Laporan AMI merupakan hasil <span class="highlight">audit mutu internal</span> yang dilaksanakan secara periodik. 
+                Laporan ini memuat <strong class="text-white">temuan audit, rekomendasi, dan status tindak lanjut</strong> yang telah dilakukan. 
+                Laporan AMI menjadi salah satu bukti <strong class="text-white">efektivitas SPMI</strong> dalam meningkatkan mutu prodi.
+            </p>
+
+            <p>
+                <strong class="text-gold">3. Pelaporan ke PDDikti:</strong>
+                Prodi secara rutin melaporkan data dan informasi ke <span class="highlight">Pangkalan Data Pendidikan Tinggi (PDDikti)</span> 
+                sesuai dengan ketentuan yang berlaku. Bukti pelaporan ke PDDikti terdokumentasi sebagai <strong class="text-white">bentuk akuntabilitas</strong> 
+                dan transparansi data prodi kepada pemerintah dan masyarakat.
+            </p>
+
+            <p>
+                <strong class="text-gold">4. Sertifikat Akreditasi:</strong>
+                Sertifikat akreditasi program studi dan institusi menjadi <span class="highlight">pengakuan eksternal</span> 
+                atas efektivitas SPMI dan mutu penyelenggaraan program studi. Sertifikat ini tersedia dan terdokumentasi sebagai 
+                <strong class="text-white">bukti capaian mutu</strong> yang telah diakui oleh BAN-PT/LAM.
+            </p>
+
+            <p class="mb-0">
+                <strong class="text-gold">Kesimpulan:</strong> Tahap Laporan SPMI dan PD Dikti di Program Studi Psikologi Islam telah 
+                <span class="highlight">100% terlaksana</span> dengan dokumen bukti yang lengkap dan terstruktur. Seluruh laporan, 
+                bukti pelaporan, dan sertifikat akreditasi tersedia secara periodik, mencerminkan <strong class="text-white">akuntabilitas</strong> 
+                dan <strong class="text-white">komitmen prodi</strong> dalam menjalankan siklus PPEPP secara konsisten dan berkelanjutan.
+            </p>
+
+            <div class="mt-4 pt-4 border-t border-gold/20 text-[10px] text-slate-500">
+                <i class="fas fa-folder-open mr-1 text-gold"></i> Akses cepat: 
+                <a href="https://drive.google.com/drive/u/1/folders/1Kx_kwZTR6lxOcC8np1PBqwT_oXeeWeU1" target="_blank" class="text-gold hover:text-white transition-colors">Folder Laporan SPMI & PD Dikti</a>
+            </div>
+        </div>
+
+        <!-- ===== PATH NAVIGASI BAWAH ===== -->
+        <div class="text-center border-t border-white/5 pt-6">
+            <p class="text-xs text-slate-500 mb-2">
+                <i class="fas fa-sitemap mr-1"></i> Navigasi
+            </p>
+            <div class="flex flex-wrap justify-center gap-1 text-[0.6rem] text-slate-600">
+                <a href="https://pi-iainbabel.github.io/psychosophia-hub/" class="hover:text-slate-400">Home</a>
+                <span>/</span>
+                <a href="https://pi-iainbabel.github.io/spmi/" class="hover:text-slate-400">SPMI</a>
+                <span>/</span>
+                <span class="text-slate-400">Laporan SPMI & PD Dikti</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-white/5 bg-navy-900/50 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-xs text-slate-500">
+                &copy; 2025 Program Studi Psikologi Islam · FDKI · IAIN Syaikh Abdurrahman Siddik Bangka Belitung
+            </p>
+            <p class="text-[10px] text-slate-600 mt-1">SPMI — Laporan SPMI & PD Dikti · Siklus PPEPP</p>
+        </div>
+    </footer>
+
+</body>
+</html>
